@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Настройки приложения — чистая доменная сущность.
 class AppSettings {
   final ThemeMode themeMode;
   final Locale locale;
