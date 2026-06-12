@@ -3,7 +3,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import '../../domain/entities/app_settings.dart';
 import '../../domain/repositories/settings_repository.dart';
 
-/// Настройки хранятся в Hive (box с примитивами, без адаптера).
 class HiveSettingsDataSource implements SettingsRepository {
   static const _boxName = 'settings';
   static const _keyTheme = 'theme_mode';

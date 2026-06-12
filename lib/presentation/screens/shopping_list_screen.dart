@@ -15,8 +15,6 @@ class ShoppingListScreen extends ConsumerWidget {
     final asyncItems = ref.watch(shoppingListProvider);
     final loc = AppLocalizations.of(context)!;
 
-    // FIX 1: вынесли hasBought наружу, чтобы использовать if-in-list вместо
-    // whenOrNull (который возвращает Widget?, несовместимый с List<Widget>).
     final hasBought =
         asyncItems.valueOrNull?.any((i) => i.isBought) ?? false;
 
@@ -24,7 +22,6 @@ class ShoppingListScreen extends ConsumerWidget {
       appBar: AppBar(
         title: Text(loc.appTitle),
         actions: [
-          // FIX 2: простой if вместо whenOrNull — корректный тип для actions.
           if (hasBought)
             TextButton.icon(
               onPressed: () =>

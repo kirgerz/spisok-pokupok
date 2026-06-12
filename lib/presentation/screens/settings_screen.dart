@@ -23,7 +23,6 @@ class SettingsScreen extends ConsumerWidget {
           return ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              // ── Тема
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16),
@@ -68,7 +67,6 @@ class SettingsScreen extends ConsumerWidget {
                 ),
               ),
               const SizedBox(height: 12),
-              // ── Язык
               Card(
                 child: Padding(
                   padding: const EdgeInsets.all(16),

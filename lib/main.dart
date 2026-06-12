@@ -57,7 +57,6 @@ class ShoppingApp extends ConsumerWidget {
         darkTheme: AppTheme.dark,
         locale: settings.locale,
         supportedLocales: AppLocalizations.supportedLocales,
-        // FIX: убран const — AppLocalizations.delegate не является const-значением
         localizationsDelegates: [
           ...AppLocalizations.delegates,
           GlobalMaterialLocalizations.delegate,

@@ -1,4 +1,3 @@
-
 class ShoppingItem {
   final String id;
   final String name;
