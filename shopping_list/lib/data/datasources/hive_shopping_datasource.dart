@@ -8,12 +8,10 @@ class HiveShoppingDataSource implements ShoppingRepository {
   static const _boxName = 'shopping_items';
   late Box<ShoppingItemModel> _box;
 
-  // StreamController для реактивного обновления UI
   final _controller = StreamController<List<ShoppingItem>>.broadcast();
 
   Future<void> init() async {
     _box = await Hive.openBox<ShoppingItemModel>(_boxName);
-    // Слушаем изменения Hive-бокса и транслируем в Stream
     _box.listenable().addListener(_onBoxChanged);
   }
 
@@ -29,7 +27,6 @@ class HiveShoppingDataSource implements ShoppingRepository {
 
   @override
   Stream<List<ShoppingItem>> watchAll() {
-    // Сразу отдаём текущее состояние при подписке
     return _controller.stream;
   }
 
