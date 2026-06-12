@@ -5,9 +5,6 @@ import '../../domain/repositories/shopping_repository.dart';
 import '../../domain/repositories/settings_repository.dart';
 import '../../domain/usecases/shopping_usecases.dart';
 
-// ──────────────────────────────────────────────
-// Datasources (инициализируются в main и override-ятся)
-// ──────────────────────────────────────────────
 
 final hiveShoppingDsProvider = Provider<HiveShoppingDataSource>((ref) {
   throw UnimplementedError('Override in ProviderScope');
@@ -17,9 +14,6 @@ final hiveSettingsDsProvider = Provider<HiveSettingsDataSource>((ref) {
   throw UnimplementedError('Override in ProviderScope');
 });
 
-// ──────────────────────────────────────────────
-// Repositories (инверсия зависимостей через интерфейс)
-// ──────────────────────────────────────────────
 
 final shoppingRepositoryProvider = Provider<ShoppingRepository>((ref) {
   return ref.watch(hiveShoppingDsProvider);
@@ -29,9 +23,6 @@ final settingsRepositoryProvider = Provider<SettingsRepository>((ref) {
   return ref.watch(hiveSettingsDsProvider);
 });
 
-// ──────────────────────────────────────────────
-// Use cases
-// ──────────────────────────────────────────────
 
 final watchShoppingItemsProvider = Provider((ref) {
   return WatchShoppingItems(ref.watch(shoppingRepositoryProvider));
