@@ -1,4 +1,4 @@
-/// Чистая доменная сущность — не зависит ни от Hive, ни от Flutter.
+
 class ShoppingItem {
   final String id;
   final String name;
